@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['font-size'], $_POST['font_color'])) {
+if (isset($_POST['font_size'], $_POST['font_color'])) {
 
 	setcookie('font_size', $_POST['font_size']);
 	setcookie('font_color', $_POST['font_color']);
@@ -24,7 +24,7 @@ if (isset($_POST['font-size'], $_POST['font_color'])) {
 	<p>Use this form to set your preferences:</p>
 
 	<form action="customize.php" method="post">
-		<select name="font-size">
+		<select name="font_size">
 			<option value="">Font Size</option>
 			<option value="xx-small">xx-small</option>
 			<option value="x-small">x-small</option>
