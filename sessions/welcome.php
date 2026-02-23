@@ -16,5 +16,5 @@ after they successfully log in. */
 
 	echo '<p><a href="logout.php">Logout</a></p>';
 
-	include('templates/footer.html');
+	include('templates/footer.php');
 ?>
