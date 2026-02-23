@@ -47,5 +47,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 }
 
-include('templates/footer.html'); // Need the footer.
+include('templates/footer.php'); // Need the footer.
 ?>
