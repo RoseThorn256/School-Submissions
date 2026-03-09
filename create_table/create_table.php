@@ -9,9 +9,10 @@
 
 	if ($dbc = @mysqli_connect('localhost', 'root', 'Pass', 'myblog')) {
 
-		$query = 'CREATE TABLE entries (
+		$query = 'CREATE TABLE IF NOT EXISTS myblog (
 		id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
 		title VARCHAR(100) NOT NULL, 
+		entry TEXT NOT NULL,
 		date_entered DATETIME NOT NULL
 		) CHARACTER SET utf8 ';
 
