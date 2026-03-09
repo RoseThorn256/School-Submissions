@@ -9,7 +9,12 @@
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+		$dbc = mysqli_connect('localhost', 'root', 'Pass', 'myblog');
+
+		mysqli_set_charset($dbc, 'utf8');
+
 		$problem = FALSE;
+
 		if (!empty($_POST['title']) && !empty($_POST['entry'])) {
 
 			$title = trim(strip_tags($_POST['title']));
@@ -22,11 +27,9 @@
 
 		}
 
-		if (!problem) {
+		if (!$problem) {
 
-			$dbc = mysqli_connect('localhost', 'root', 'Pass', 'myblog');
-
-			$query = "INSERT INTO entries (id, title, entry, date_entered) VALUES (0, '$title', '$entry', NOW())";
+			$query = "INSERT INTO myblog (id, title, entry, date_entered) VALUES (0, '$title', '$entry', NOW())";
 
 			if (@mysqli_query($dbc, $query)) {
 
@@ -38,9 +41,9 @@
 
 			}
 
-			mysqli_close($dbc);
-
 		}
+
+		mysqli_close($dbc);
 
 	}
 
