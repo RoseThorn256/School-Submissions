@@ -17,8 +17,8 @@
 
 		if (!empty($_POST['title']) && !empty($_POST['entry'])) {
 
-			$title = mysqli_real_escape_string(trim(strip_tags($_POST['title'])));
-			$entry = mysqli_real_escape_string(trim(strip_tags($_POST['entry'])));
+			$title = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['title'])));
+			$entry = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['entry'])));
 
 		} else {
 
