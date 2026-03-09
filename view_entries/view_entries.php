@@ -9,7 +9,7 @@
 
 	$dbc = mysqli_connect('localhost', 'root', 'Pass', 'myblog');
 
-	$query = 'SELECT * FROM entries ORDER BY date_entered DESC';
+	$query = 'SELECT * FROM myblog ORDER BY date_entered DESC';
 
 	if ($r = mysqli_query($dbc, $query)) {
 
