@@ -17,8 +17,8 @@
 
 		if (!empty($_POST['title']) && !empty($_POST['entry'])) {
 
-			$title = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['title'])));
-			$entry = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['entry'])));
+			$title = trim(strip_tags($_POST['title']));
+			$entry = trim(strip_tags($_POST['entry']));
 
 		} else {
 
@@ -29,7 +29,7 @@
 
 		if (!$problem) {
 
-			$query = "INSERT INTO entries (id, title, entry, date_entered) VALUES (0, '$title', '$entry', NOW())";
+			$query = "INSERT INTO myblog (id, title, entry, date_entered) VALUES (0, '$title', '$entry', NOW())";
 
 			if (@mysqli_query($dbc, $query)) {
 
@@ -41,9 +41,9 @@
 
 			}
 
-			mysqli_close($dbc);
-
 		}
+
+		mysqli_close($dbc);
 
 	}
 
